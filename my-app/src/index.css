@@ -1,0 +1,707 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.App {
+  width: 100%;
+  height: 300vh;
+  background-color: azure;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+.nav-bar {
+  width: 100%;
+  height: 75px;
+  background-color: #160c17;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0px;
+  z-index: 2;
+}
+nav {
+  width: 90%;
+  max-width: 90%;
+  height: 90%;
+  color: #fff3f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  max-width: 15%;
+  width: 15%;
+
+  height: 100%;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-weight: bold;
+
+  position: relative;
+  top: -3.2px;
+  left: -20px;
+  cursor: pointer;
+}
+.menu {
+  max-width: 62%;
+  width: 62%;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.menu li {
+  list-style-type: none;
+  position: relative;
+}
+.menu li a {
+  text-decoration: none;
+  color: #fff3f5;
+  font-size: 20px;
+  text-transform: uppercase;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+}
+.menu li a::before {
+  content: "";
+  width: 0%;
+  height: 15%;
+  background-color: #fff3f5;
+  position: absolute;
+  bottom: -5px;
+  right: 100%;
+  z-index: -1;
+  transition: all 0.4s ease-in-out;
+}
+.menu li a:hover::before {
+  z-index: 1;
+  right: 0;
+  width: 100%;
+}
+.social {
+  max-width: 15%;
+  width: 15%;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.social li {
+  list-style-type: none;
+}
+.social li a {
+  text-decoration: none;
+  color: #fff3f5;
+  font-size: 18px;
+}
+/*Home*/
+#home {
+  width: 100%;
+  height: 70vh;
+  background-image: url(../public/4.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 75px;
+  display: flex;
+  align-items: center;
+}
+.home-introduce {
+  width: 52%;
+  height: 40%;
+  margin-left: 42px;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  text-transform: uppercase;
+  position: relative;
+  top: 100px;
+  color: #fff3f5;
+}
+.intro-text {
+  font-size: 15px;
+  letter-spacing: 4px;
+}
+.text {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: -10px;
+  left: -4px;
+}
+
+.first-text {
+  font-size: 40px;
+}
+.second-text {
+  font-size: 50px;
+  font-weight: bold;
+
+  animation: back 20s linear infinite;
+
+  -webkit-text-stroke: 1px #fff3f5;
+  background: url(../public/back.png);
+  background-position: 0 0;
+  color: transparent;
+  background-clip: text;
+}
+
+@keyframes back {
+  100% {
+    background-position: 2000px 0;
+  }
+}
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+button {
+  display: inline-block;
+  position: relative;
+  background: none;
+  border: none;
+  color: #fff3f5;
+  font-size: 18px;
+  cursor: pointer;
+  width: 250px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.19);
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bolder;
+  top: -30px;
+}
+span {
+  display: block;
+}
+button::before,
+button::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: #fff3f5;
+}
+
+span::before,
+span::after {
+  content: "";
+  width: 2px;
+  height: 0;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: #fff3f5;
+}
+button:hover::before,
+button:hover::after {
+  width: 100%;
+}
+button:hover span::before,
+button:hover span::after {
+  height: 100%;
+}
+.btn-2::before,
+.btn-2::after {
+  transition-delay: 0s;
+}
+.btn-2 span::before,
+.btn-2 span::after {
+  transition-delay: 0.2s;
+}
+.btn-2::before {
+  right: 0;
+  top: 0;
+}
+.btn-2::after {
+  left: 0;
+  bottom: 0;
+}
+.btn-2 span::before {
+  left: 0;
+  top: 0;
+}
+.btn-2 span::after {
+  right: 0;
+  bottom: 0;
+}
+.btn-2:hover::before,
+.btn-2:hover::after {
+  transition-delay: 0.2s;
+}
+.btn-2:hover span::before,
+.btn-2:hover span::after {
+  transition-delay: 0s;
+}
+/*About*/
+#introduce {
+  width: 100%;
+  height: 68vh;
+  background-color: #332057;
+  position: relative;
+  top: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.introduce {
+  width: 90%;
+  height: 75%;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.cell {
+  display: flex;
+
+  align-items: center;
+}
+.content {
+  width: 90%;
+  height: 95%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.span1 {
+  color: #fff3f5;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+.span2 {
+  color: #fff3f5;
+  font-size: 38px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  position: relative;
+}
+.span2::after {
+  content: "";
+  position: absolute;
+  width: 22%;
+  height: 5px;
+  background-color: #160c17;
+  bottom: -18px;
+  left: 0;
+}
+.text-ctn {
+  color: #adadad;
+  font-size: 14px;
+}
+.square {
+  width: 64px;
+  height: 64px;
+  background-color: transparent;
+  border: 5px solid #160c17;
+  margin-bottom: 15px;
+  transition: all 0.4s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.square:hover {
+  transform: rotate(45deg);
+}
+.descript {
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff3f5;
+  position: relative;
+  top: 8px;
+}
+.icons {
+  color: #fff3f5;
+  font-size: 28px;
+}
+/*Project*/
+#project {
+  position: relative;
+  top: 75px;
+  width: 100%;
+  height: 80vh;
+  background-color: #332057;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.project::before {
+  position: absolute;
+  content: "My Projects /";
+  color: #fff3f5;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: 50px;
+  top: -50px;
+  left: 60px;
+}
+.item1 {
+  grid-area: item1;
+  background-image: url(../public/12.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.item1 a,
+.item2 a,
+.item3 a,
+.item4 a,
+.item5 a,
+.item6 a,
+.item7 a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-decoration: none; /* No underlines on the link */
+  z-index: 10; /* Places the link above everything else in the div */
+  background-color: #fff; /* Fix to make div clickable in IE */
+  opacity: 0; /* Fix to make div clickable in IE */
+  filter: alpha(opacity=1); /* Fix to make div clickable in IE */
+}
+.item2 {
+  grid-area: item2;
+  background-image: url(../public/11.png);
+  background-position: center;
+  background-size: cover;
+}
+.item3 {
+  grid-area: item3;
+  background-image: url(../public/13.png);
+  background-position: center;
+  background-size: cover;
+}
+.item4,
+.item1,
+.item2,
+.item3,
+.item5,
+.item6,
+.item7 {
+  position: relative;
+}
+.item4 {
+  grid-area: item4;
+  background-image: url(../public/14.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.item4 span,
+.item1 span,
+.item2 span,
+.item3 span,
+.item5 span,
+.item6 span,
+.item7 span {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.item4 {
+  color: #fff3f5;
+}
+.item1::before {
+  content: "Tra Xuan / Instagram Clone";
+}
+.item2::before {
+  content: "Tra Xuan / Calculator Tips";
+}
+.item3::before {
+  content: "Tra Xuan / Pokemon Gopro";
+}
+.item5::before {
+  content: "Tra Xuan / Weather App";
+}
+.item6::before {
+  content: "Tra Xuan / Quizzical Game";
+}
+.item7::before {
+  content: "Tra Xuan / Tenzies Game";
+}
+.item4::before {
+  content: "Tra Xuan / RiotGames Clone";
+}
+
+.item4::before,
+.item1::before,
+.item2::before,
+.item3::before,
+.item5::before,
+.item6::before,
+.item7::before {
+  text-align: center;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 15%;
+  position: absolute;
+  bottom: 0%;
+  padding-left: 20px;
+
+  color: #fff3f5;
+  font-style: italic;
+  font-size: 12px;
+  z-index: -2;
+  background: rgba(48, 48, 48, 0.59);
+  transition: all 0.4s ease-in-out;
+}
+.item4:hover::before,
+.item1:hover::before,
+.item2:hover::before,
+.item3:hover::before,
+.item5:hover::before,
+.item6:hover::before,
+.item7:hover::before {
+  z-index: 1;
+  padding-bottom: 10px;
+}
+.item5 {
+  grid-area: item5;
+  background-image: url(../public/4.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.item6 {
+  grid-area: item6;
+  background-image: url(../public/5.webp);
+  background-position: center;
+  background-size: cover;
+}
+.item7 {
+  grid-area: item7;
+  background-image: url(../public/1.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.project {
+  width: 90%;
+  height: 90%;
+  background-color: #332057;
+  display: grid;
+  grid-template-areas:
+    "item1 item1 item2 item3 item4 item4"
+    "item5 item6 item7 item7 item4 item4";
+  gap: 10px;
+}
+.cells {
+  background-color: #d9d4e4;
+  cursor: pointer;
+}
+/*Contact*/
+#contact {
+  width: 100%;
+  height: 75vh;
+  background-color: #160c17;
+  position: relative;
+  top: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../public/12.jpg);
+  background-size: cover;
+}
+.contact {
+  width: 90%;
+  height: 90%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.media {
+  width: 71%;
+  height: 15%;
+  background-color: transparent;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 22px;
+  position: relative;
+  font-size: 20px;
+  border: 1px solid #332057;
+  background: rgba(180, 180, 180, 0.19);
+}
+
+.media a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  text-decoration: none;
+  background-color: transparent;
+  font-size: 70px;
+  color: #160c17;
+}
+.media:hover {
+  background-color: #332057;
+}
+.media a:hover {
+  color: #fff3f5;
+}
+.media a span {
+  font-size: 20px;
+  position: absolute;
+  top: 34px;
+  left: 90px;
+}
+/* .fb {
+  width: 42%;
+}
+
+.insta {
+  width: 45%;
+}
+.github {
+  width: 38%;
+}
+.gmail {
+  width: 35%;
+}
+.phone {
+  width: 47%;
+} */
+/*Responsive*/
+@media only screen and (max-width: 1377px) {
+  .nav-btn {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .App {
+    height: 233vh;
+  }
+  .nav-btn {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border: 1px solid gainsboro;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    z-index: 10;
+  }
+  .menu {
+    display: flex;
+    height: 300px;
+    width: 600px;
+    color: #160c17;
+    flex-direction: column;
+    top: -200px;
+    left: -75px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+  }
+  .menu.active {
+    top: 10px;
+  }
+  button::before,
+  button::after {
+    display: none;
+  }
+  .nav-bar {
+    z-index: 10;
+  }
+  nav .social {
+    display: none;
+    z-index: 10;
+    width: 100%;
+  }
+  .logo {
+    left: 60px;
+  }
+  #home {
+    background-position: center;
+  }
+  .home-introduce {
+    width: 100%;
+    top: 70px;
+  }
+  .intro-text {
+    font-size: 10px;
+  }
+  .text {
+    width: 100%;
+  }
+
+  .btn-2 {
+    top: 70px;
+  }
+
+  #introduce {
+    display: none;
+  }
+  .project::before {
+    font-size: 15px;
+    top: 8px;
+    left: 20px;
+  }
+  .project {
+    overflow-x: auto;
+    z-index: 2;
+  }
+  .item4::before,
+  .item1::before,
+  .item2::before,
+  .item3::before,
+  .item5::before,
+  .item6::before,
+  .item7::before {
+    display: none;
+  }
+  .media {
+    width: 100%;
+  }
+  .media a {
+    font-size: 50px;
+  }
+  .media a span {
+    font-size: 12px;
+    left: 75px;
+  }
+  .logos {
+    position: relative;
+    top: 6px;
+    left: 10px;
+  }
+}
